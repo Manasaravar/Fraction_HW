@@ -1,3 +1,5 @@
+import java.awt.*;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -8,6 +10,10 @@ public class Main {
         fraction.setNumerator(1000);
         fraction.setDenominator(5);
         fraction.PrintFraction(fraction);
+
+        Point point = new Point(2,3);
+        Point otherPoint = new Point(7,8);
+        System.out.println("Расстояние: " + point.distance(otherPoint));
     }
 }
 class Fraction {
@@ -39,5 +45,19 @@ class Fraction {
     public void PrintFraction (Fraction fraction) {
         System.out.println("Результат деления чисел: %.2f".formatted (fraction.getResult()));
     }
+class Point {
+        private double x;
+        private double y;
+        public Point (double x, double y) {
+            this.x = x;
+            this.y = y;
+        }
+        public double distance (Point other) {
+            return Math.sqrt(Math.pow(other.x,2) + Math.pow(other.y,2));
+        }
+    public void PrintPoint () {
+        System.out.println("X = %f, Y = %f".formatted(x,y));
+    }
 
+}
 }
